@@ -8,45 +8,39 @@ function hideAllSections() {
     });
   }
   
-  // Function to show the timeline section
-  function showTimeline() {
-    hideAllSections();
-    document.getElementById('timeline-section').style.display = 'block';
-  }
-  
   // Function to show the apology section
   function showApology() {
     hideAllSections();
     document.getElementById('apology-section').style.display = 'block';
   }
   
-  // Function to show the letter section
-  // function showLetter() {
-  //   hideAllSections();
-  //   document.getElementById('letter-section').style.display = 'block';
-  //   createFallingHearts(); // Create falling hearts when the "Letter from the Heart" section is displayed
-  // }
+  //Function to show the letter section
+  function showLetter() {
+    hideAllSections();
+    document.getElementById('letter-section').style.display = 'block';
+    createFallingHearts(); // Create falling hearts when the "Letter from the Heart" section is displayed
+  }
   
   
   
   // Function to create falling hearts
-  // function createFallingHearts() {
-  //     // Get the container within the 'Letter from the Heart' section
-  //     var heartContainer = document.getElementById('letter-section');
+  function createFallingHearts() {
+      // Get the container within the 'Letter from the Heart' section
+      var heartContainer = document.getElementById('letter-section');
   
-  //     for (var i = 0; i < 20; i++) {
-  //         var heart = document.createElement('div');
-  //         heart.className = 'falling-heart';
-  //         heart.style.left = Math.random() * window.innerWidth + 'px';
-  //         heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-  //         heartContainer.appendChild(heart);
+      for (var i = 0; i < 20; i++) {
+          var heart = document.createElement('div');
+          heart.className = 'falling-heart';
+          heart.style.left = Math.random() * window.innerWidth + 'px';
+          heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+          heartContainer.appendChild(heart);
   
-  //         // Remove the heart from the DOM after the animation completes
-  //         heart.addEventListener('animationend', function () {
-  //             this.remove();
-  //         });
-  //     }
-  // }
+          // Remove the heart from the DOM after the animation completes
+          heart.addEventListener('animationend', function () {
+              this.remove();
+          });
+      }
+  }
   
   // Function to create falling hearts
   function createFallingHearts() {
@@ -90,7 +84,6 @@ function hideAllSections() {
   });
   
   // Event listeners for navigation links
-  document.getElementById('timeline-link').addEventListener('click', showTimeline);
   document.getElementById('apology-link').addEventListener('click', showApology);
   document.getElementById('letter-link').addEventListener('click', showLetter);
   
